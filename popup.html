@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mock Speak</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="formContainer">
+        <div class="heading">
+          <h1>Mock Speak</h1>
+        </div>
+        <h3 class="sub-heading">Convert text into mOcK sPeAk</h3>
+        <form>
+          <div class="input-group">
+            <input type="text" name="textInput" id="textInput" required />
+            <label for="textInput">Enter Your Text</label>
+          </div>
+
+          <button type="submit" class="submit-btn" onclick="mockConvert()">
+            Submit
+          </button>
+        </form>
+        <span id="result"></span>
+      </div>
+    </div>
+
+    <script>
+      const mockConvert = () => {
+        event.preventDefault();
+        userText = document.getElementById('textInput').value;
+        let res = '';
+        for (i = 0; i < userText.length; i++) {
+          res +=
+            i % 2 == 0 ? userText.charAt(i).toUpperCase() : userText.charAt(i);
+        }
+        alert(res);
+        document.getElementById('textInput').value = '';
+      };
+    </script>
+  </body>
+</html>
+
+<!-- <div>
+            <div className="floatingLabel">
+              <input
+                placeholder="Enter Your Text"
+                id="textInput"
+                type="text"
+                name="textInput"
+                required
+              />
+              <label htmlFor="textInput">Enter Your Text</label>
+            </div>
+          </div>
+          <input
+            type="button"
+            class="button"
+            value="Submit"
+            onclick="mockConvert()"
+          />
+          <span id="result"></span> -->
