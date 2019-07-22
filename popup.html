@@ -11,6 +11,7 @@
       type="text/css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="popup.js"></script>
   </head>
   <body>
     <div class="container">
@@ -24,47 +25,13 @@
             <input type="text" name="textInput" id="textInput" required />
             <label for="textInput">Enter Your Text</label>
           </div>
+          <div id="result"></div>
 
-          <button type="submit" class="submit-btn" onclick="mockConvert()">
+          <button id="submitBtn" class="submit-btn">
             Submit
           </button>
         </form>
-        <span id="result"></span>
       </div>
     </div>
-
-    <script>
-      const mockConvert = () => {
-        event.preventDefault();
-        userText = document.getElementById('textInput').value;
-        let res = '';
-        for (i = 0; i < userText.length; i++) {
-          res +=
-            i % 2 == 0 ? userText.charAt(i).toUpperCase() : userText.charAt(i);
-        }
-        alert(res);
-        document.getElementById('textInput').value = '';
-      };
-    </script>
   </body>
 </html>
-
-<!-- <div>
-            <div className="floatingLabel">
-              <input
-                placeholder="Enter Your Text"
-                id="textInput"
-                type="text"
-                name="textInput"
-                required
-              />
-              <label htmlFor="textInput">Enter Your Text</label>
-            </div>
-          </div>
-          <input
-            type="button"
-            class="button"
-            value="Submit"
-            onclick="mockConvert()"
-          />
-          <span id="result"></span> -->
